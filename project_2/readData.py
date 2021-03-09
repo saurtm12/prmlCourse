@@ -90,7 +90,8 @@ def readData():
             n_fft=1024,
             hop_length=512,
             **kwargs_for_mel)
-        x = x.T
+        #extract logmel spectogram
+        x = np.log10(x.T)
 
         X_test.append(x)
 
